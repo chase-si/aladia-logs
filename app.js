@@ -2,12 +2,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('./logger');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3018;
 
 // 使用 body-parser 解析请求体
 app.use(bodyParser.json());
+app.use(cors());
 
 // 日志 API - 接收并记录日志
 app.post('/log', (req, res) => {
