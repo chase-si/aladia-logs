@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const logger = require('./logger');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3018;
 
 // 使用 body-parser 解析请求体
 app.use(bodyParser.json());
