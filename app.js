@@ -13,11 +13,12 @@ app.use(cors());
 
 // 日志 API - 接收并记录日志
 app.post('/log', (req, res) => {
+  console.log(11111);
   const { level, message } = req.body;
 
   // 根据请求中的日志级别记录日志
   if (logger[level]) {
-    logger[level](message);
+    logger[level](JSON.stringify(message));
     res.status(200).json({ status: 'success', message: 'Log recorded' });
   } else {
     res.status(400).json({ status: 'error', message: 'Invalid log level' });
